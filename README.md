@@ -104,8 +104,8 @@ To set up the project locally, follow these steps:
 1. Clone the repository from our Git repository.
 2. Install the required dependencies using your preferred package manager.
 3. Set up the MySQL database named `db_dep_teacher` and import the provided file.
-4. Start the Department Microservice on port 50051.
-5. Start the Teacher Microservice on port 50054.
+4. Start the Department Microservice on port 5005.
+5. Start the Teacher Microservice on port 5005.
 6. Start the API Gateway on port 3000.
 7. The project is now set up locally and ready for use.
 

@@ -35,9 +35,9 @@ const teacherProtoDefinition = protoLoader.loadSync(teacherProtoPath, {
   oneofs: true,
 });
 const departmentProto = grpc.loadPackageDefinition(departmentProtoDefinition);
-const clientDepartments = new departmentProto.DepartmentService('localhost:5001', grpc.credentials.createInsecure());
+const clientDepartments = new departmentProto.DepartmentService('localhost:50051', grpc.credentials.createInsecure());
 const teacherProto = grpc.loadPackageDefinition(teacherProtoDefinition);
-const clientTeachers = new teacherProto.TeacherService('localhost:5004', grpc.credentials.createInsecure());
+const clientTeachers = new teacherProto.TeacherService('localhost:50054', grpc.credentials.createInsecure());
 
 const mergedSchema = makeExecutableSchema({
   typeDefs: mergeTypeDefs([depSchema, teacherSchema]),

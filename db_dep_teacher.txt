@@ -1,0 +1,33 @@
+-- Create the Database
+CREATE DATABASE IF NOT EXISTS db_dep_teacher;
+
+-- Use the Database
+USE db_dep_teacher;
+
+-- Create the Departments Table
+CREATE TABLE IF NOT EXISTS departments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+-- Create the Teachers Table
+CREATE TABLE IF NOT EXISTS teachers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    departmentCode INT,
+    FOREIGN KEY (departmentCode) REFERENCES departments(id)
+);
+
+-- Add Sample Entries to Departments (with Arabic names in Latin letters)
+INSERT INTO departments (name) VALUES
+('Computer Science'),
+('Mathematics'),
+('Physics');
+
+-- Add Sample Entries to Teachers (with Arabic names in Latin letters)
+INSERT INTO teachers (name, lastname, email, departmentCode) VALUES
+('Mohammed', 'Ahmed', 'mohammed.ahmed@example.com', 1),
+('Fatima', 'Khalil', 'fatima.khalil@example.com', 2),
+('Abdullah', 'Hussein', 'abdullah.hussein@example.com', 1);
